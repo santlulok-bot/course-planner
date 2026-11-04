@@ -65,3 +65,21 @@ button:hover {
   background: #f87171;
   color: #1a1a1a;
 }
+
+.event {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.event-date {
+  width: 100px;
+  color: #aaa;
+}
+
+.event-type {
+  width: 90px;
+  text-transform: capitalize;
+}
