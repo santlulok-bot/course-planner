@@ -1,4 +1,5 @@
 import {useState} from "react"
+import "./App.css"
 
 const initialCourses = [
   {id: "1", code: "CP312", name: "Algorithm Design/Analysis I"},
@@ -7,7 +8,7 @@ const initialCourses = [
 ]
 function CourseCard({course, onDelete}) {
   return (
-    <div> 
+    <div className="card"> 
       <h3>{course.code}</h3>
       <p>{course.name}</p>
       <button onClick={() => onDelete(course.id)}>Delete Course</button>
@@ -40,7 +41,7 @@ function App(){
     }
 
 return (
-    <div> 
+    <div className="app"> 
     <h1>Course Planner</h1>
     <p>Track your courses and deadlines.</p>
 
