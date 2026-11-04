@@ -2,7 +2,7 @@ import {useState} from "react"
 
 const initialCourses = [
   {id: "1", code: "CP312", name: "Algorithm Design/Analysis I"},
-  {id: "2", code: "CP317", name: "Software Enginering"},
+  {id: "2", code: "CP317", name: "Software Engineering"},
   {id: "3", code: "CP468", name: "Artificial Intelligence"}
 ]
 function CourseCard({course}) {
@@ -22,6 +22,7 @@ function App(){
   
 
     function handleAdd(){
+      if (newCode === "" || newName === "") return
       const newCourse = {
         id: Date.now(),
         code: newCode,
@@ -50,7 +51,7 @@ return (
       onChange={(e) => setNewName(e.target.value)}
       placeholder="Course Name"
     />
-    <button onClick={handleAdd}>ADD course</button>
+    <button onClick={handleAdd}>ADD courses</button>
 
     {courses.map ((course) => (
       <CourseCard key={course.id} course={course} />
