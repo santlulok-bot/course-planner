@@ -5,11 +5,12 @@ const initialCourses = [
   {id: "2", code: "CP317", name: "Software Engineering"},
   {id: "3", code: "CP468", name: "Artificial Intelligence"}
 ]
-function CourseCard({course}) {
+function CourseCard({course, onDelete}) {
   return (
     <div> 
       <h3>{course.code}</h3>
       <p>{course.name}</p>
+      <button onClick={() => onDelete(course.id)}>Delete Course</button>
     </div>
   )
 }
@@ -34,6 +35,10 @@ function App(){
       setNewName("")
     }
 
+    function handleDelete(id) {
+      setCourses(courses.filter((course) => course.id !== id))
+    }
+
 return (
     <div> 
     <h1>Course Planner</h1>
@@ -52,9 +57,10 @@ return (
       placeholder="Course Name"
     />
     <button onClick={handleAdd}>ADD courses</button>
+    
 
     {courses.map ((course) => (
-      <CourseCard key={course.id} course={course} />
+      <CourseCard key={course.id} course={course} onDelete={handleDelete} />
     ))}
     </div>
   )
